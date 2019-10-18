@@ -29,7 +29,12 @@ class Http {
         return data;
     }
     async delete(url) {
-        const response = await fetch(url);
+        const response = await fetch(url, {
+            method: "DELETE",
+            headers: {
+                'Content-type': 'application/json'
+            }
+        });
         const data = await response.json()
         return data;
     }
